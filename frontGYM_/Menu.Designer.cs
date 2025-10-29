@@ -96,6 +96,7 @@
             Reportes.TabIndex = 5;
             Reportes.Text = "Ver Reportes";
             Reportes.UseVisualStyleBackColor = true;
+            Reportes.Click += Reportes_Click;
             // 
             // Volver
             // 

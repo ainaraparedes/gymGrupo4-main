@@ -98,7 +98,7 @@ namespace clasesGYM_.Migrations
                     b.ToTable("Clientes", (string)null);
                 });
 
-            modelBuilder.Entity("clasesGYM_.Pago", b =>
+            modelBuilder.Entity("clasesGYM_.Pagos", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,11 +166,11 @@ namespace clasesGYM_.Migrations
                         .HasForeignKey("SuscripcionId1");
                 });
 
-            modelBuilder.Entity("clasesGYM_.Pago", b =>
+            modelBuilder.Entity("clasesGYM_.Pagos", b =>
                 {
                     b.HasOne("clasesGYM_.Cliente", "ClientePago")
                         .WithOne("Pago")
-                        .HasForeignKey("clasesGYM_.Pago", "ClienteId")
+                        .HasForeignKey("clasesGYM_.Pagos", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

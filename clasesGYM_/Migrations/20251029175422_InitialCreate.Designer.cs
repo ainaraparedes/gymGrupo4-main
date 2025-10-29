@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace clasesGYM_.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    [Migration("20251029132206_InitialCreate")]
+    [Migration("20251029175422_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -101,7 +101,7 @@ namespace clasesGYM_.Migrations
                     b.ToTable("Clientes", (string)null);
                 });
 
-            modelBuilder.Entity("clasesGYM_.Pago", b =>
+            modelBuilder.Entity("clasesGYM_.Pagos", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -169,11 +169,11 @@ namespace clasesGYM_.Migrations
                         .HasForeignKey("SuscripcionId1");
                 });
 
-            modelBuilder.Entity("clasesGYM_.Pago", b =>
+            modelBuilder.Entity("clasesGYM_.Pagos", b =>
                 {
                     b.HasOne("clasesGYM_.Cliente", "ClientePago")
                         .WithOne("Pago")
-                        .HasForeignKey("clasesGYM_.Pago", "ClienteId")
+                        .HasForeignKey("clasesGYM_.Pagos", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

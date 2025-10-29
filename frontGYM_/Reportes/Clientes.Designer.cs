@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             Volver = new Button();
-            dataGridView1 = new DataGridView();
+            dataGridClientes = new DataGridView();
             label6 = new Label();
-            Nombre = new TextBox();
+            txtActivos = new TextBox();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridClientes).BeginInit();
             SuspendLayout();
             // 
             // Volver
@@ -47,15 +47,16 @@
             Volver.TabIndex = 51;
             Volver.Text = "volver!";
             Volver.UseVisualStyleBackColor = false;
+            Volver.Click += Volver_Click;
             // 
-            // dataGridView1
+            // dataGridClientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(87, 92);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(627, 188);
-            dataGridView1.TabIndex = 50;
+            dataGridClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridClientes.Location = new Point(87, 92);
+            dataGridClientes.Name = "dataGridClientes";
+            dataGridClientes.RowHeadersWidth = 51;
+            dataGridClientes.Size = new Size(627, 188);
+            dataGridClientes.TabIndex = 50;
             // 
             // label6
             // 
@@ -67,12 +68,12 @@
             label6.TabIndex = 49;
             label6.Text = "CLIENTES";
             // 
-            // Nombre
+            // txtActivos
             // 
-            Nombre.Location = new Point(195, 308);
-            Nombre.Name = "Nombre";
-            Nombre.Size = new Size(204, 27);
-            Nombre.TabIndex = 53;
+            txtActivos.Location = new Point(195, 308);
+            txtActivos.Name = "txtActivos";
+            txtActivos.Size = new Size(204, 27);
+            txtActivos.TabIndex = 53;
             // 
             // label1
             // 
@@ -88,14 +89,15 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(Nombre);
+            Controls.Add(txtActivos);
             Controls.Add(label1);
             Controls.Add(Volver);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridClientes);
             Controls.Add(label6);
             Name = "Clientes";
             Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Clientes_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,9 +105,9 @@
         #endregion
 
         private Button Volver;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridClientes;
         private Label label6;
-        private TextBox Nombre;
+        private TextBox txtActivos;
         private Label label1;
     }
 }

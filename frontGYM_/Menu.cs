@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using frontGYM_.Pago;
+using frontGYM_.Reportes;
 
 namespace frontGYM_
 {
@@ -47,6 +48,11 @@ namespace frontGYM_
         private void CargarPago_Click(object sender, EventArgs e)
         {
             using (CargarPago cargarpago = new CargarPago()) { cargarpago.ShowDialog(); }
+        }
+
+        private void Reportes_Click(object sender, EventArgs e)
+        {
+            using (VerReportes reportes = new VerReportes()) { reportes.ShowDialog(); }
         }
     }
 }

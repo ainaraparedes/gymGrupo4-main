@@ -1,5 +1,6 @@
 ﻿using clasesGYM_;
 using clasesGYM_.Repositorios;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,7 @@ namespace frontGYM_.Forms_Suscripciones
 
         private void ModificarSuscripcion_Load(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
             Id.ReadOnly = true;
             RecargarDataGridView();
             
@@ -41,11 +43,23 @@ namespace frontGYM_.Forms_Suscripciones
             dataGridView1.MultiSelect = false;
         }
 
+        public static List<Suscripcion> ObtenerSuscripcionesActivas()
+        {
+            using (var context = new AplicationDbContext())
+            {
+                return context.Suscripciones
+                    .Where(s => s.EstaActivo)
+                    .Include(s => s.Clientes)
+                    .ToList();
+            }
+        }
+
+
         private void RecargarDataGridView()
         {
-            // Cargar solo suscripciones activas
             var suscripciones = SuscripcionRepository.ObtenerSuscripcionesActivas();
             dataGridView1.DataSource = suscripciones;
+
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)

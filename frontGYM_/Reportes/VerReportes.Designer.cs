@@ -1,6 +1,6 @@
 ﻿namespace frontGYM_.Reportes
 {
-    partial class Ganancias
+    partial class VerReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,86 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerReportes));
+            button1 = new Button();
+            button2 = new Button();
             label6 = new Label();
-            dataGridPagos = new DataGridView();
-            txtPagos = new TextBox();
-            label1 = new Label();
             Volver = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridPagos).BeginInit();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Location = new Point(47, 182);
+            button1.Name = "button1";
+            button1.Size = new Size(288, 51);
+            button1.TabIndex = 0;
+            button1.Text = "Ver Clientes";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(455, 182);
+            button2.Name = "button2";
+            button2.Size = new Size(288, 51);
+            button2.TabIndex = 1;
+            button2.Text = "Ver Ganancias";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label6.Location = new Point(351, 35);
+            label6.Location = new Point(265, 78);
             label6.Name = "label6";
-            label6.Size = new Size(74, 20);
-            label6.TabIndex = 44;
-            label6.Text = "PAGOS";
-            // 
-            // dataGridPagos
-            // 
-            dataGridPagos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridPagos.Location = new Point(91, 94);
-            dataGridPagos.Name = "dataGridPagos";
-            dataGridPagos.RowHeadersWidth = 51;
-            dataGridPagos.Size = new Size(627, 188);
-            dataGridPagos.TabIndex = 45;
-            // 
-            // txtPagos
-            // 
-            txtPagos.Location = new Point(204, 310);
-            txtPagos.Name = "txtPagos";
-            txtPagos.Size = new Size(204, 27);
-            txtPagos.TabIndex = 47;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(93, 313);
-            label1.Name = "label1";
-            label1.Size = new Size(105, 20);
-            label1.TabIndex = 46;
-            label1.Text = "Ganancia total";
+            label6.Size = new Size(291, 20);
+            label6.TabIndex = 22;
+            label6.Text = "VER REPORTES DISPONIBLES";
             // 
             // Volver
             // 
             Volver.BackColor = Color.Red;
             Volver.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Volver.ForeColor = SystemColors.ControlLightLight;
-            Volver.Location = new Point(613, 383);
+            Volver.Location = new Point(633, 366);
             Volver.Name = "Volver";
-            Volver.Size = new Size(105, 36);
-            Volver.TabIndex = 48;
+            Volver.Size = new Size(110, 42);
+            Volver.TabIndex = 23;
             Volver.Text = "volver!";
             Volver.UseVisualStyleBackColor = false;
             Volver.Click += Volver_Click;
             // 
-            // Ganancias
+            // VerReportes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(Volver);
-            Controls.Add(txtPagos);
-            Controls.Add(label1);
-            Controls.Add(dataGridPagos);
             Controls.Add(label6);
-            Name = "Ganancias";
-            Text = "Ganancias";
-            Load += Ganancias_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridPagos).EndInit();
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "VerReportes";
+            Text = "VerReportes";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private Button button1;
+        private Button button2;
         private Label label6;
-        private DataGridView dataGridPagos;
-        private TextBox txtPagos;
-        private Label label1;
         private Button Volver;
     }
 }

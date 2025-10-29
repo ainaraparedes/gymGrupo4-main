@@ -21,6 +21,7 @@ namespace frontGYM_
 
         private void ModificarCliente_Load(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = true;
             // Cargar datos usando el método optimizado
             RecargarDataGridView();
             
