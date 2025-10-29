@@ -33,6 +33,7 @@ namespace frontGYM_.Forms_Suscripciones
 
         private void ModificarSuscripcion_Load(object sender, EventArgs e)
         {
+            Id.ReadOnly = true;
             RecargarDataGridView();
             
             dataGridView1.AutoGenerateColumns = true;
@@ -81,7 +82,7 @@ namespace frontGYM_.Forms_Suscripciones
                 SuscripcionRepository.ActualizarSuscripcion(suscripcionExistente);
 
                 MessageBox.Show("Suscripción modificada con éxito.");
-                RecargarDataGridView();
+                this.Close();
             }
             catch (FormatException)
             {

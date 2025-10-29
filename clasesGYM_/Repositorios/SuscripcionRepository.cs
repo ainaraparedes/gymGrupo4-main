@@ -49,6 +49,14 @@ namespace clasesGYM_.Repositorios
                 return context.Suscripciones.Find(suscripcionId);
             }
         }
+        public static decimal ObtenerPrecioSuscripcion(int suscripcionId)
+        {
+            using (var context = new AplicationDbContext())
+            {
+                var suscripcion = context.Suscripciones.Find(suscripcionId);
+                return suscripcion != null ? suscripcion.Precio : 0m;
+            }
+        }
 
         // METODO: Eliminar una suscripcion (eliminación lógica - desactivar)
         public static void EliminarSuscripcion(int id)

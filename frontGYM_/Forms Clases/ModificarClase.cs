@@ -49,6 +49,7 @@ namespace frontGYM_.Forms_Clases
 
         private void ModificarClase_Load(object sender, EventArgs e)
         {
+            Id.ReadOnly = true;
             using (AplicationDbContext context = new AplicationDbContext())
             {
                 var clases = context.Clases.ToList();

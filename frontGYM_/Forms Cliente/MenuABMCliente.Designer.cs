@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuABMCliente));
             AltaCliente = new Button();
             ActualizarCliente = new Button();
-            BajaCliente = new Button();
             label1 = new Label();
             Volver = new Button();
             SuspendLayout();
@@ -51,18 +51,9 @@
             ActualizarCliente.Name = "ActualizarCliente";
             ActualizarCliente.Size = new Size(407, 41);
             ActualizarCliente.TabIndex = 1;
-            ActualizarCliente.Text = "Actualizar cliente";
+            ActualizarCliente.Text = "Actualizar o Eliminar Cliente";
             ActualizarCliente.UseVisualStyleBackColor = true;
             ActualizarCliente.Click += ActualizarCliente_Click;
-            // 
-            // BajaCliente
-            // 
-            BajaCliente.Location = new Point(207, 271);
-            BajaCliente.Name = "BajaCliente";
-            BajaCliente.Size = new Size(407, 41);
-            BajaCliente.TabIndex = 2;
-            BajaCliente.Text = "Dar de baja cliente";
-            BajaCliente.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -94,9 +85,9 @@
             ClientSize = new Size(850, 479);
             Controls.Add(Volver);
             Controls.Add(label1);
-            Controls.Add(BajaCliente);
             Controls.Add(ActualizarCliente);
             Controls.Add(AltaCliente);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuABMCliente";
             Text = "MenuABMCliente";
             ResumeLayout(false);
@@ -107,7 +98,6 @@
 
         private Button AltaCliente;
         private Button ActualizarCliente;
-        private Button BajaCliente;
         private Label label1;
         private Button Volver;
     }

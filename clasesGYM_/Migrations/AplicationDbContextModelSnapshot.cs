@@ -70,14 +70,30 @@ namespace clasesGYM_.Migrations
                     b.Property<int>("Dni")
                         .HasColumnType("int");
 
+                    b.Property<bool>("EstaActivo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SuscripcionId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SuscripcionId1")
+                        .HasColumnType("int");
 
                     b.Property<int>("Telefono")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SuscripcionId");
+
+                    b.HasIndex("SuscripcionId1");
 
                     b.ToTable("Clientes", (string)null);
                 });
@@ -90,11 +106,14 @@ namespace clasesGYM_.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ClientePagoId")
+                    b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaPago")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Metodo")
+                        .HasColumnType("int");
 
                     b.Property<string>("MetodoPago")
                         .IsRequired()
@@ -103,14 +122,10 @@ namespace clasesGYM_.Migrations
                     b.Property<decimal>("Monto")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("SuscripcionPagoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientePagoId");
-
-                    b.HasIndex("SuscripcionPagoId");
+                    b.HasIndex("ClienteId")
+                        .IsUnique();
 
                     b.ToTable("Pagos", (string)null);
                 });
@@ -122,6 +137,9 @@ namespace clasesGYM_.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("EstaActivo")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -135,68 +153,34 @@ namespace clasesGYM_.Migrations
                     b.ToTable("Suscripciones", (string)null);
                 });
 
-            modelBuilder.Entity("clasesGYM_.SuscripcionCliente", b =>
+            modelBuilder.Entity("clasesGYM_.Cliente", b =>
                 {
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
+                    b.HasOne("clasesGYM_.Suscripcion", null)
+                        .WithMany()
+                        .HasForeignKey("SuscripcionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("SuscripcionId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FechaFin")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FechaInicio")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ClienteId", "SuscripcionId");
-
-                    b.HasIndex("SuscripcionId");
-
-                    b.ToTable("SuscripcionClientes", (string)null);
+                    b.HasOne("clasesGYM_.Suscripcion", null)
+                        .WithMany("Clientes")
+                        .HasForeignKey("SuscripcionId1");
                 });
 
             modelBuilder.Entity("clasesGYM_.Pago", b =>
                 {
                     b.HasOne("clasesGYM_.Cliente", "ClientePago")
-                        .WithMany()
-                        .HasForeignKey("ClientePagoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("clasesGYM_.Suscripcion", "SuscripcionPago")
-                        .WithMany()
-                        .HasForeignKey("SuscripcionPagoId")
+                        .WithOne("Pago")
+                        .HasForeignKey("clasesGYM_.Pago", "ClienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ClientePago");
-
-                    b.Navigation("SuscripcionPago");
-                });
-
-            modelBuilder.Entity("clasesGYM_.SuscripcionCliente", b =>
-                {
-                    b.HasOne("clasesGYM_.Cliente", "Cliente")
-                        .WithMany("Suscripciones")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("clasesGYM_.Suscripcion", "Suscripcion")
-                        .WithMany("Clientes")
-                        .HasForeignKey("SuscripcionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
-
-                    b.Navigation("Suscripcion");
                 });
 
             modelBuilder.Entity("clasesGYM_.Cliente", b =>
                 {
-                    b.Navigation("Suscripciones");
+                    b.Navigation("Pago")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("clasesGYM_.Suscripcion", b =>

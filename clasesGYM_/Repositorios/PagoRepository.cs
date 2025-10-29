@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace clasesGYM_.Repositorios
 {
-    internal class PagoRepository
+    public class PagoRepository
     {
+        public static void RegistrarPago(Pagos pago)
+        {
+            using (AplicationDbContext context = new AplicationDbContext())
+            {
+                context.Pagos.Add(pago);
+                context.SaveChanges();
+            }
+        }
     }
 }

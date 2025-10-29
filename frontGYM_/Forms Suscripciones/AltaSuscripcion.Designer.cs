@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaSuscripcion));
             label2 = new Label();
             label = new Label();
             Nombre = new TextBox();
@@ -116,6 +117,7 @@
             Controls.Add(Nombre);
             Controls.Add(label);
             Controls.Add(label2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AltaSuscripcion";
             Text = "AltaSuscripcion";
             Load += AltaSuscripcion_Load;

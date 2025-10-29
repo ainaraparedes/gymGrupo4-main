@@ -4,21 +4,21 @@ using clasesGYM_;
 public class AplicationDbContext : DbContext
 {
 
-    public DbSet<Pago> Pagos { get; set; }
+    public DbSet<Pagos> Pagos { get; set; }
     public DbSet<Suscripcion> Suscripciones { get; set; }
     public DbSet<Cliente> Clientes { get; set; }
     public DbSet<Clase> Clases { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-    "Server=localhost;Database=SistemaGym_;Trusted_Connection=True;TrustServerCertificate=True;"
+    "Server=localHost;Database=SistemaGym_;Trusted_Connection=True;TrustServerCertificate=True;"
 );
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Configuración de tablas
-        modelBuilder.Entity<Pago>().ToTable("Pagos");
+        modelBuilder.Entity<Pagos>().ToTable("Pagos");
         modelBuilder.Entity<Suscripcion>().ToTable("Suscripciones");
         modelBuilder.Entity<Cliente>().ToTable("Clientes");
         modelBuilder.Entity<Clase>().ToTable("Clases");
@@ -31,5 +31,11 @@ public class AplicationDbContext : DbContext
             .WithMany()                                 // Una Suscripción puede tener MUCHOS Clientes
             .HasForeignKey(c => c.SuscripcionId)       // La clave foránea es SuscripcionId
             .IsRequired(true);                          // La suscripción es OBLIGATORIA (no puede ser null)
+        modelBuilder.Entity<Cliente>()
+            .HasOne(c => c.Pago)                     // Cliente tiene un Pago
+            .WithOne(p => p.ClientePago)                  // Pago tiene un Cliente
+            .HasForeignKey<Pagos>(p => p.ClienteId)     // La clave foránea está en Pago
+            .IsRequired(true);                       // El pago es obligatorio
+
     }
 }

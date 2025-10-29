@@ -32,9 +32,9 @@
             label5 = new Label();
             label4 = new Label();
             Fecha = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            comboBoxPago = new ComboBox();
             Volver = new Button();
-            Monto = new TextBox();
+            textBoxPrecio = new TextBox();
             Nombre = new TextBox();
             label6 = new Label();
             label3 = new Label();
@@ -45,24 +45,25 @@
             label7 = new Label();
             Id = new TextBox();
             Ide = new Label();
-            Suscripcion = new ListBox();
+            textBoxSuscripcion = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // Pago
             // 
             Pago.BackColor = SystemColors.ScrollBar;
-            Pago.Location = new Point(526, 447);
+            Pago.Location = new Point(457, 498);
             Pago.Name = "Pago";
             Pago.Size = new Size(165, 36);
             Pago.TabIndex = 42;
             Pago.Text = "Pagar!";
             Pago.UseVisualStyleBackColor = false;
+            Pago.Click += Pago_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(353, 391);
+            label5.Location = new Point(331, 441);
             label5.Name = "label5";
             label5.Size = new Size(84, 20);
             label5.TabIndex = 41;
@@ -71,7 +72,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(377, 343);
+            label4.Location = new Point(355, 393);
             label4.Name = "label4";
             label4.Size = new Size(51, 20);
             label4.TabIndex = 40;
@@ -79,50 +80,50 @@
             // 
             // Fecha
             // 
-            Fecha.Location = new Point(458, 338);
+            Fecha.Location = new Point(436, 388);
             Fecha.Name = "Fecha";
-            Fecha.Size = new Size(335, 27);
+            Fecha.Size = new Size(299, 27);
             Fecha.TabIndex = 38;
             // 
-            // comboBox1
+            // comboBoxPago
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(458, 289);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(335, 28);
-            comboBox1.TabIndex = 37;
+            comboBoxPago.FormattingEnabled = true;
+            comboBoxPago.Location = new Point(436, 339);
+            comboBoxPago.Name = "comboBoxPago";
+            comboBoxPago.Size = new Size(299, 28);
+            comboBoxPago.TabIndex = 37;
             // 
             // Volver
             // 
             Volver.BackColor = Color.Red;
             Volver.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Volver.ForeColor = SystemColors.ControlLightLight;
-            Volver.Location = new Point(33, 433);
+            Volver.Location = new Point(771, 497);
             Volver.Name = "Volver";
             Volver.Size = new Size(105, 36);
             Volver.TabIndex = 36;
             Volver.Text = "volver!";
             Volver.UseVisualStyleBackColor = false;
             // 
-            // Monto
+            // textBoxPrecio
             // 
-            Monto.Location = new Point(457, 238);
-            Monto.Name = "Monto";
-            Monto.Size = new Size(336, 27);
-            Monto.TabIndex = 35;
+            textBoxPrecio.Location = new Point(435, 288);
+            textBoxPrecio.Name = "textBoxPrecio";
+            textBoxPrecio.Size = new Size(300, 27);
+            textBoxPrecio.TabIndex = 35;
             // 
             // Nombre
             // 
-            Nombre.Location = new Point(121, 124);
+            Nombre.Location = new Point(116, 342);
             Nombre.Name = "Nombre";
-            Nombre.Size = new Size(192, 27);
+            Nombre.Size = new Size(175, 27);
             Nombre.TabIndex = 34;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label6.Location = new Point(327, 23);
+            label6.Location = new Point(32, 57);
             label6.Name = "label6";
             label6.Size = new Size(164, 20);
             label6.TabIndex = 33;
@@ -131,7 +132,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(375, 292);
+            label3.Location = new Point(353, 342);
             label3.Name = "label3";
             label3.Size = new Size(62, 20);
             label3.TabIndex = 32;
@@ -140,7 +141,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(377, 245);
+            label2.Location = new Point(355, 295);
             label2.Name = "label2";
             label2.Size = new Size(53, 20);
             label2.TabIndex = 31;
@@ -150,7 +151,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(37, 124);
+            label1.Location = new Point(32, 342);
             label1.Name = "label1";
             label1.Size = new Size(64, 20);
             label1.TabIndex = 30;
@@ -160,25 +161,25 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(368, 62);
+            dataGridView1.Location = new Point(229, 38);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(425, 155);
+            dataGridView1.Size = new Size(598, 228);
             dataGridView1.TabIndex = 44;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
             // Apellido
             // 
-            Apellido.Location = new Point(121, 170);
+            Apellido.Location = new Point(116, 388);
             Apellido.Name = "Apellido";
-            Apellido.Size = new Size(192, 27);
+            Apellido.Size = new Size(175, 27);
             Apellido.TabIndex = 46;
             Apellido.TextChanged += Apellido_TextChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(37, 170);
+            label7.Location = new Point(32, 388);
             label7.Name = "label7";
             label7.Size = new Size(66, 20);
             label7.TabIndex = 45;
@@ -186,7 +187,7 @@
             // 
             // Id
             // 
-            Id.Location = new Point(121, 71);
+            Id.Location = new Point(116, 289);
             Id.Name = "Id";
             Id.Size = new Size(56, 27);
             Id.TabIndex = 50;
@@ -194,26 +195,25 @@
             // Ide
             // 
             Ide.AutoSize = true;
-            Ide.Location = new Point(37, 71);
+            Ide.Location = new Point(32, 289);
             Ide.Name = "Ide";
             Ide.Size = new Size(24, 20);
             Ide.TabIndex = 49;
             Ide.Text = "ID";
             // 
-            // Suscripcion
+            // textBoxSuscripcion
             // 
-            Suscripcion.FormattingEnabled = true;
-            Suscripcion.Location = new Point(457, 386);
-            Suscripcion.Name = "Suscripcion";
-            Suscripcion.Size = new Size(336, 44);
-            Suscripcion.TabIndex = 51;
+            textBoxSuscripcion.Location = new Point(436, 441);
+            textBoxSuscripcion.Name = "textBoxSuscripcion";
+            textBoxSuscripcion.Size = new Size(299, 27);
+            textBoxSuscripcion.TabIndex = 51;
             // 
             // CargarPago
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(857, 495);
-            Controls.Add(Suscripcion);
+            ClientSize = new Size(888, 561);
+            Controls.Add(textBoxSuscripcion);
             Controls.Add(Id);
             Controls.Add(Ide);
             Controls.Add(Apellido);
@@ -223,9 +223,9 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(Fecha);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxPago);
             Controls.Add(Volver);
-            Controls.Add(Monto);
+            Controls.Add(textBoxPrecio);
             Controls.Add(Nombre);
             Controls.Add(label6);
             Controls.Add(label3);
@@ -245,9 +245,9 @@
         private Label label5;
         private Label label4;
         private DateTimePicker Fecha;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxPago;
         private Button Volver;
-        private TextBox Monto;
+        private TextBox textBoxPrecio;
         private TextBox Nombre;
         private Label label6;
         private Label label3;
@@ -258,6 +258,6 @@
         private Label label7;
         private TextBox Id;
         private Label Ide;
-        private ListBox Suscripcion;
+        private TextBox textBoxSuscripcion;
     }
 }

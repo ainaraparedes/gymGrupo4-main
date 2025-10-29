@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarCliente));
             dataGridView1 = new DataGridView();
             label2 = new Label();
             label3 = new Label();
@@ -210,7 +211,7 @@
             checkBoxActivo.AutoSize = true;
             checkBoxActivo.Location = new Point(157, 450);
             checkBoxActivo.Name = "checkBoxActivo";
-            checkBoxActivo.Size = new Size(75, 24);
+            checkBoxActivo.Size = new Size(73, 24);
             checkBoxActivo.TabIndex = 36;
             checkBoxActivo.Text = "Activo";
             checkBoxActivo.UseVisualStyleBackColor = true;
@@ -238,6 +239,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModificarCliente";
             Text = "ModificarCliente";
             Load += ModificarCliente_Load;

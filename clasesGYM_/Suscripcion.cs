@@ -12,5 +12,6 @@ namespace clasesGYM_
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public bool EstaActivo { get; set; }
+        public ICollection<Cliente> Clientes { get; set; }
     }
 }

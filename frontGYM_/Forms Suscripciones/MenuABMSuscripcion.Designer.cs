@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuABMSuscripcion));
             label1 = new Label();
             ModificarSuscripcion = new Button();
             AltaSuscripcion = new Button();
@@ -86,6 +87,7 @@
             Controls.Add(label1);
             Controls.Add(ModificarSuscripcion);
             Controls.Add(AltaSuscripcion);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuABMSuscripcion";
             Text = "MenuABMSuscripcion";
             ResumeLayout(false);

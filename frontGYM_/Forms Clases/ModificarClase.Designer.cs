@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarClase));
             dataGridView1 = new DataGridView();
             label6 = new Label();
             label1 = new Label();
@@ -52,7 +53,7 @@
             dataGridView1.Location = new Point(456, 50);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(447, 349);
+            dataGridView1.Size = new Size(520, 349);
             dataGridView1.TabIndex = 9;
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged;
             // 
@@ -197,6 +198,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(label6);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModificarClase";
             Text = "ModificarClase";
             Load += ModificarClase_Load;

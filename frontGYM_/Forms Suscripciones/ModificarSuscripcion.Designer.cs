@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarSuscripcion));
             dataGridView1 = new DataGridView();
             label6 = new Label();
             Precio = new TextBox();
@@ -164,6 +165,7 @@
             Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ModificarSuscripcion";
             Text = "ModificarSuscripcion";
             Load += ModificarSuscripcion_Load;

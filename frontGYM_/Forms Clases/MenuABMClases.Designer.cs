@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuABMClases));
             Volver = new Button();
             label1 = new Label();
             ModificarClase = new Button();
@@ -86,6 +87,7 @@
             Controls.Add(label1);
             Controls.Add(ModificarClase);
             Controls.Add(AltaClase);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MenuABMClases";
             Text = "MenuABMClases";
             ResumeLayout(false);
