@@ -11,8 +11,9 @@ namespace clasesGYM_
         public int Id { get; set; }
         public DateTime FechaPago { get; set; }
         public decimal Monto { get; set; }
-        public string MetodoPago { get; set; } 
+        public string MetodoPago { get; set; }
         // public Cliente ClientePago { get; set; }    
+        // luego activar esto y hacer la relacion con la clase Cliente
         // public Suscripcion SuscripcionPago { get; set; }
     }
 }
