@@ -10,6 +10,7 @@ El administrador puede gestionar clientes y clases mediante operaciones de alta,
 - clases
 - suscripciones
 - pagos
+
  Funcionalidades principales:
 
 - El sistema debe permitir al administrador ABM de clientes.
