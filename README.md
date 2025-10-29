@@ -1,4 +1,5 @@
 - TP_GestionGYM_Grupo4
+
 Este sistema de gestión de gimnasio permite administrar de forma integral las operaciones relacionadas con clientes, clases, suscripciones y pagos. Ofrece funcionalidades tanto para administradores como para clientes, incluyendo el registro, inicio de sesión, inscripción a clases, adquisición de suscripciones y generación de comprobantes de facturación.
 
 El administrador puede gestionar clientes y clases mediante operaciones de alta, baja y modificación, además de acceder a reportes clave sobre actividad e ingresos. El sistema también permite visualizar precios, realizar pagos por suscripciones y emitir comprobantes automáticos, facilitando la administración contable del gimnasio.
